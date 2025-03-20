@@ -86,7 +86,3 @@ Contributions are welcome! If you'd like to contribute to the project, please fo
 ## License
 
 MIT
-
----
-
-**Note:** This README.md is a starting point. Feel free to customize it further to reflect your specific project details and goals.
