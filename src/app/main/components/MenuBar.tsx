@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Upload, LayoutDashboard, Image } from "lucide-react";
+import { Upload, LayoutDashboard, Image, CircleUserRound } from "lucide-react";
 
 const MenuBar = () => {
   return (
@@ -14,18 +14,25 @@ const MenuBar = () => {
           <Upload size={20} />Upload
         </Link>
         <Link
-          href="/dashboard"
+          href="/main/dashboard"
           className="w-[188px] h-[48px] flex items-center justify-start
                     gap-2 pl-4"
         >
           <LayoutDashboard size={20} />Dashboard
         </Link>
         <Link
-          href="/assets"
+          href="/main/myassets"
           className="w-[188px] h-[48px] flex items-center justify-start
                     gap-2 pl-4"
         >
           <Image size={20} />My Assets
+        </Link>
+        <Link
+          href="/main/userprofile"
+          className="w-[188px] h-[48px] flex items-center justify-start
+                    gap-2 pl-4"
+          >
+            <CircleUserRound size={20} />My Account
         </Link>
       </nav>
     </div>
