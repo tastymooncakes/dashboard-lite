@@ -9,25 +9,6 @@ import { useRouter } from "next/navigation";
 
 export default function Home() {
   const { view, updateView } = useViewRouter();
-  const router = useRouter();
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const checkAuthToken = async () => {
-      try {
-        const response = await fetch("/api/auth/validate", {
-          credentials: "include"
-        });
-        if (response.ok) {
-          router.push("/dashboard");
-        }
-      } catch (error) {
-        console.log("User not Authenticated");
-      }
-      setLoading(false);
-    }
-    checkAuthToken();
-  }, [router])
 
   useEffect(() => {
     if (!view) {

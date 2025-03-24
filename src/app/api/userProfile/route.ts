@@ -3,7 +3,6 @@ import { NextRequest, NextResponse } from "next/server";
 export async function GET(req: NextRequest) {
     try {
         const authToken = req.cookies.get('auth_token');
-        console.log(authToken);
         if (!authToken) {
             return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
         }
@@ -18,7 +17,6 @@ export async function GET(req: NextRequest) {
             return NextResponse.json({ message: 'Could not get user profile'}, { status: 500});
         }
         const userProfile = await response.json();
-        console.log(userProfile);
         return NextResponse.json(userProfile);
     } catch (error) {
         return NextResponse.json({ message: 'Error'} , {status: 500});

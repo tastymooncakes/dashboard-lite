@@ -42,7 +42,7 @@ const LoginForm = () => {
                 const errorData = await response.json();
                 throw new Error(errorData.message || 'Login Failed');
             }
-            router.push('/dashboard')
+            router.push('/main/dashboard')
         } catch (err) {
             setError((err as Error).message);
         } finally {
