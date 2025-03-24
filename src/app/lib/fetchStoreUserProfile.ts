@@ -5,7 +5,6 @@ export const fetchStoreUserProfile = async () => {
         const response = await fetch('/api/userProfile');
 
         if (!response.ok) {
-            console.log("error");
             throw new Error('Failed');
         }
 
@@ -14,7 +13,10 @@ export const fetchStoreUserProfile = async () => {
         const { setUser } = useUserStore.getState()
         setUser({
             username: data.display_name,
-            profilePicture: data.profile_picture
+            profilePicture: data.profile_picture_thumbnail,
+            displayName: data.display_name,
+            subject: data.subject,
+            description: data.description
         }); 
 
     } catch (error) {

@@ -7,7 +7,8 @@ export function middleware(req: NextRequest) {
         return NextResponse.redirect(new URL("/main/dashboard", req.url));
     }
 
-    if (!token && req.nextUrl.pathname === "/main/dashboard") {
+    if (!token && req.nextUrl.pathname.startsWith("/main")) {
+        console.log("fire")
         return NextResponse.redirect(new URL("/", req.url));
     }
 
@@ -15,5 +16,5 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-    matcher: ["/", "/main/dashboard/:path*"]
+    matcher: ["/", "/main/:path*"]
 };
